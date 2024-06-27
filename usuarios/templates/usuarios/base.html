@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Template Base{% endblock title %}</title>
+<link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+{% block head %}{% endblock head %}
+{% block script %}{% endblock script %}
+</head>
+<body >
+    {% block nav %}{% endblock nav %}
+    {% block titulo %}<h1 class="text-green-400 text-center">Template Base</h1>{% endblock titulo %}
+    {% block conteudo %}{% endblock conteudo %}
+    {% block footer %}{% endblock footer %}
+</body>
+</html>

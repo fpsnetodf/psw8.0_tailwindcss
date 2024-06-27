@@ -1,0 +1,46 @@
+{% extends "usuarios/modelo.html" %}
+{% load static %}
+
+{% block head %}
+
+{% endblock  %}
+
+
+{% block titulo %}<h3 class="font-destaque">Cadastre-se</h3>{% endblock titulo %}
+{% block conteudo %}
+<body class="bg-gradient-to-r from-blue-950 via-blue-800 to-sky-300"> 
+    <div class="container"> 
+        <div class="flex flex-row justify-center items-center mr-4">
+            <div class="sm:col-span-1">
+                <img src="{% static 'img/logo.png' %}" alt="">
+                <h3 >VitaLab</h3>
+            </div>
+            <div class="flex flex-grow sm:col-span-1 mr-8">
+                <form action="" method="POST">
+                        <label for="primeiro_nome">Primeiro nome</label>
+                        <input type="text" class="input-default" id="primeiro_nome" name="primeiro_nome" placeholder="Digite seu primeiro nome">                
+                        <label for="ultimo_nome">Último nome</label>                
+                        <input type="text" class="input-default" id="ultimo_nome" name="ultimo_nome" placeholder="Digite seu ultimo nome">
+            </div>
+        </div>
+                <div class="mx-10 grid sm:grid-cols-2 grid-cols-1 gap-0 sm:gap-2">
+                    <div class="sm:grid-cols-2">
+                        <label for="username">Username</label>               
+                        <input type="text" class="input-default w-full" id="username" placeholder="Digite seu username" name="username">                
+                        <label for="senha">Senha</label>                
+                        <input type="text" class="input-default w-full" id="senha" name="senha" placeholder="Digite sua senha">
+                    </div>
+                    <div class="sm:grid-cols-2">
+                        <label for="email">E-mail</label>               
+                        <input type="text" class="input-default w-full" id="email" name="email" placeholder="Digite seu email">                
+                        <label for="confirmar_senha">Confirmar senha</label>                
+                        <input type="text" class="input-default w-full" id="confirmar_senha" name="confirmar_senha" placeholder="Digite sua senha pra confirmar">
+                    </div>            
+                </div>        
+                <div class="flex justify-center my-5">
+                    <input type="submit" class="btn-sky">
+                </div>
+            </form>
+    </div>
+</body>
+{% endblock %}

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-destaque{
+    @apply text-6xl text-green-300 hover:text-green-700 text-center font-bold mt-8
+}
+.input-default{
+    @apply text-violet-400 w-full rounded-md placeholder:px-4 focus:placeholder:text-green-700 focus:ring-sky-500 focus:ring-4
+}
+.btn-sky{
+    @apply text-black px-8  bg-sky-300 hover:bg-white hover:font-bold rounded-xl mt-8
+}
+@layer base {
+    h3 {
+        @apply ml-12 text-3xl text-white hover:text-violet-500 font-black
+    }
+    label {
+        @apply text-white hover:text-slate-400
+    }
+    a {
+        @apply hover:text-green-300
+    }
+
+}

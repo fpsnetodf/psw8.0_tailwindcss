@@ -1,0 +1,31 @@
+{% extends "usuarios/modelo.html" %}
+{% load static %}
+
+{% block title %}Login{% endblock title %}
+{% block head %}{% endblock head %}
+{% block script %}{% endblock script %}
+
+{% block nav %}
+    
+{% endblock nav %}
+{% block titulo %}{% endblock titulo %}
+{% block conteudo %}
+    <body class="bg-gradient-to-r from-blue-950 via-indigo-600 to-violet-600"> 
+        <div class="flex flex-row justify-center mx-8 mt-20">
+            <form action="" method="post">{% csrf_token %}
+            <div class="flex flex-row">
+                <img class="mx-0-0 w-32 h-32 hover:rotate-45" src="{% static 'img/logo.png' %}" alt="">
+                <h1 class="-inset-2ms-0 text-sky-600 font-bold text-4xl hover:text-white w-2/3 justify-start pt-12">Login</h1>
+            </div>
+                <label for="email">E-mail</label>
+                <input class="input-default w-1/3 mb-4" type="email" name="email" id="email" placeholder='Digite seu email'>
+                <label for="senha">Senha</label>
+                <input class="input-default w-1/3 " type="text" id="senha" name='senha' placeholder="Digite sua senha">
+                <div class="flex flex-row justify-center mt-4">
+                    <button class="btn-sky" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </body>
+{% endblock conteudo %}
+{% block footer %}{% endblock footer %}
