@@ -7,11 +7,11 @@
 {% block nav %}
     {% include "usuarios/nav.html" %}
 {% endblock nav %}
-{% block titulo %}<h1 class="text-green-400 text-xl font-bold text-center bg-indigo-400 py-2">Página Home</h1>{% endblock titulo %}
+{% block titulo %}<h1 class="text-green-400 text-xl font-bold text-center bg-indigo-400 py-2 mb-2">Página Home</h1>{% endblock titulo %}
 {% block conteudo %}
     {% if messages %}
         {% for message in messages %}
-            <p class="{{ message.tags }}">{{ message }}</p>
+            <p class="{{ message.tags }}">{{ message }}<span class="text-red-400 hover:text-gray-400 hover:font-bold">{{request.user|title}}</span></p>
         {% endfor %}
     {% endif %}
 {% endblock conteudo %}
