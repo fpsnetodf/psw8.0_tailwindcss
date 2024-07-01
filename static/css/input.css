@@ -17,6 +17,21 @@
 .btn-sky{
     @apply text-black px-8  bg-sky-300 hover:bg-white hover:font-bold rounded-xl mt-8
 }
+.alert-warning{
+    @apply bg-yellow-100 text-gray-700 py-2 px-4 mx-8 rounded-md text-center
+}
+.alert-danger{
+    @apply bg-red-200 text-gray-700 py-2 px-4 mx-8 rounded-md text-center
+}
+.alert-info{
+    @apply bg-sky-200 text-gray-700 py-2 px-4 mx-8 rounded-md text-center
+}
+.alert-success{
+    @apply bg-green-200 text-gray-700 py-2 px-4 mx-8 rounded-md text-center
+}
+.alert-debug{
+    @apply bg-blue-200 text-gray-700 py-2 px-4 mx-8 rounded-md text-center
+}
 @layer base {
     h3 {
         @apply ml-12 text-3xl text-white hover:text-violet-500 font-black

@@ -12,6 +12,11 @@
 {% block conteudo %}
     <body class="bg-login"> 
         <div class="flex flex-row justify-center mx-8 mt-20">
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="{{ message.tags }}">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
             <form action="" method="post">{% csrf_token %}
             <div class="flex flex-row">
                 <img class="mx-0-0 w-32 h-32 hover:rotate-45" src="{% static 'img/logo.png' %}" alt="">

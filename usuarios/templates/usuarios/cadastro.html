@@ -9,8 +9,10 @@
 {% block titulo %}<h3 class="font-destaque">Cadastre-se</h3>{% endblock titulo %}
 {% block conteudo %}
 <body class="bg-login"> 
-    {% if message %}
-        <p class="bg-yellow-200 text-gray-700 py-2 px-4 mx-8 rounded-md text-center">{{ message }}</p>
+    {% if messages %}
+        {% for message in messages %}
+        <p class="{{ message.tags }}">{{ message }}</p>
+        {% endfor %}
     {% endif %}
     <div class="container"> 
         <div class="flex flex-row justify-center items-center mr-4">
