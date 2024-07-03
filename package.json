@@ -97,10 +97,12 @@
     "yaml": "^2.4.5"
   },
   "scripts": {
-    "dev": "npx tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --watch"
+    "dev": "npx tailwindcss -i ./static/css/input.css -o ./static/css/tailwind.css --watch", 
+    "pdb": "python3 manage.py makemigrations && python3 manage.py migrate",
+    "server": "python3 manage.py runserver"
   },
   "keywords": [],
-  "author": "",
+  "author": "Francisco Paulo",
   "license": "ISC",
-  "description": ""
+  "description": "Projeto Django com tailwindcss"
 }

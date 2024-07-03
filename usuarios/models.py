@@ -31,3 +31,13 @@ class SolicitacaoExame(models.Model):
     
     def __str__(self):
         return f"{ self.usuario } | { self.exame.nome }"
+    
+    
+class PedidosExames(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    exames = models.ManyToManyField(SolicitacaoExame)
+    agendado = models.BooleanField(default=True)
+    data = models.DateField()
+
+    def __str__(self):
+        return f'{self.usuario} | {self.data}'
