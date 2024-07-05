@@ -9,7 +9,61 @@
 {% block head %}{% endblock head %}
 {% block script %}{% endblock script %}
 
-{% block nav %}{% endblock nav %}
+{% block nav %}
+    {% include "usuarios/nav.html" %}
+{% endblock nav %}
 {% block titulo %}<h1 class="bg-gray-300 py-3 text-rose-300 hover:text-rose-400 text-2xl font-bold text-center">Solicitar Exames</h1>{% endblock titulo %}
-{% block conteudo %}{% endblock conteudo %}
+{% block conteudo %}
+<body class="bg-login">
+    <div class="grid grid-rows-1 grid-cols-3 gap-0 mx-4 ">         
+            
+                <div class="col-span-3 md:col-span-2 px-2 m-6 overflow-auto">
+                    <h3 class="text-sky-300 text-xl mr-6">Solicitar exames</h3> 
+                    
+                    <form action="" method="POST">{% csrf_token %}
+                        <div >
+                        <label for="exames">Selecione os exames para realizar</label>
+                            <select id="exames" class="mt-2 w-full rounded rounded-xl overflow-auto" multiple name="exames">
+                           
+                                <option class="px-6 py-2 bg-gray-200 hover:bg-gray-100" value="">Exame 1</option>
+                            
+                            </select>
+                            <br>
+                        </div>
+                        <input  type="submit" class="ms-12 btn-sky"  name="ultimo_nome" value="Solicitar exames">
+                    </form>
+                </div>               
+    
+                <div class="col-span-3 md:col-span-1 bg-gray-100 border border-gray-200 rounded-xl px-2 m-6 overflow-x-auto">
+        
+                            <div style="font-size: 20px; font-weight: bold" class='ms-0 mx-auto'>
+                               
+                                <img src="{% static 'exames/img/check.png' %}">
+                                
+                                Exame 1
+                                <div class="text-gray-400 inline pl-80">
+                                   R$ 30
+                                </div>
+                            </div>
+                       
+                        
+                        <hr style="color: white;">
+                        <div>
+                            <label class="text-black">Total: </label><label class="text-black pl-80">R$ 30</label>
+                        </div>
+                        <br>
+    
+                        <h5>Data: 08 de Setembro</h5>
+                        <br>
+    
+                        <form action="" method="POST">{% csrf_token %}
+                            <button class="btn-sky">Fechar pedido</button>
+                        </form>                
+    
+                </div>            
+    </div>
+
+    
+</body>
+{% endblock conteudo %}
 {% block footer %}{% endblock footer %}
