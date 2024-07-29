@@ -23,10 +23,22 @@
                     <form action="" method="POST">{% csrf_token %}
                         <div >
                         <label for="exames">Selecione os exames para realizar</label>
-                            <select id="exames" class="mt-2 w-full rounded rounded-xl overflow-auto" multiple name="exames">
-                           
-                                <option class="px-6 py-2 bg-gray-200 hover:bg-gray-100" value="">Exame 1</option>
-                            
+                            <select id="exames" class="mt-2 w-full rounded-xl" multiple name="exames">
+                                {% for exame in tipos_exames %} 
+                                    {% if exame.disponivel %}                               
+                                    <option class="px-6 py-2 bg-gray-200 hover:bg-gray-100" value="{{ exame.id }}">                                        
+                                            {{ exame.nome }}
+                                            {{ exame.preco }}
+                                            {{exame.disponivel}}
+                                      </option>
+                                    {% else %}
+                                        <option class="px-6 py-2 bg-gray-200 hover:bg-gray-100" value="{{ exame.id }}">                                            
+                                                <p class="">{{ exame.nome }}</p>
+                                                <p class="">{{ exame.preco }}</p>
+                                                {{exame.disponivel}}                                            
+                                        </option>
+                                    {% endif %}
+                                {% endfor %}
                             </select>
                             <br>
                         </div>
@@ -36,15 +48,10 @@
     
                 <div class="col-span-3 md:col-span-1 bg-gray-100 border border-gray-200 rounded-xl px-2 m-6 overflow-x-auto">
         
-                            <div style="font-size: 20px; font-weight: bold" class='ms-0 mx-auto'>
-                               
-                                <img src="{% static 'exames/img/check.png' %}">
-                                
-                                Exame 1
-                                <div class="text-gray-400 inline pl-80">
-                                   R$ 30
-                                </div>
-                            </div>
+                            <div style="font-size: 8px; font-weight: bold" class='ms-0 mx-auto text-green-400'>
+                                <div class="w-4 h-4"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="oi sl ayc"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div> 
+                             </div>
+                             
                        
                         
                         <hr style="color: white;">
